@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CCCCCC"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:behavior_hideable="true"
+                app:behavior_peekHeight="56dp"
+                app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <LinearLayout
+            android:id="@+id/ll_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#fff">
+        <FrameLayout
+                android:id="@+id/main_media_frame"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#000000">
+
+            <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                    android:id="@+id/videoview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:id="@+id/ll_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ll_video"
+            android:orientation="horizontal"
+            android:layout_toEndOf="@+id/ll_video">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Video Name"
+                android:layout_marginStart="10dp"/>
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_clear_black_24dp"
+                android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
